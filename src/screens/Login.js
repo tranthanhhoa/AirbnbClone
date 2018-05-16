@@ -5,9 +5,15 @@ import InputField from '../components/form/InputField';
 import NextArrowButton from '../components/buttons/NextArrowButton';
 
 class Login extends React.Component {
+
+    handleNextButton = () => {
+        alert('Next button')
+    }
+
     render(){
         return(
             <KeyboardAvoidingView
+            behavior="padding"
             style={styles.container}>
                 <View style={styles.scrollViewWrapper}>
                     <ScrollView style={styles.scrollView}>
@@ -28,7 +34,7 @@ class Login extends React.Component {
                         inputType="password"/>
                     </ScrollView>
                     <View style={styles.nextButton}>
-                        <NextArrowButton/>
+                        <NextArrowButton handleNextButton={this.handleNextButton}/>
                     </View>
                 </View>
             </KeyboardAvoidingView>
